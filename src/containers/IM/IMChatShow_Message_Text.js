@@ -12,7 +12,7 @@ import {
 
 import Const from '../../utils/const'
 import System_styles from '../../utils/system_styles'
-import IMCharShowBg from './IMCharShowBg'
+//import IMCharShowBg from './IMCharShowBg'
 
 
 export default class IMChatShow_Message_Text extends Component {
@@ -80,11 +80,14 @@ export default class IMChatShow_Message_Text extends Component {
                 ref={component => this._root = component}
 
             >
-                <IMCharShowBg
+                {/*
+               <IMCharShowBg
                     width = {bgWidth}
                     height = {bgHeight}
                     isMe = {data.isMe}
                 />
+                */}
+ 
                 <Text
                     style={[System_styles.getChanggui(15,Const.color_hei_56),{textAlign:'left',backgroundColor:'transparent'},data.isMe&&{color:'white'}]}
                 >

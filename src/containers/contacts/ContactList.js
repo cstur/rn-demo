@@ -10,17 +10,18 @@ class ContactList extends Component {
   constructor() {
     super();
   }
-  
+
   render() {
     const { userReducer,favorites } = this.props;
-
+    const goToPageDetail = () => Actions.contactDetail({text: 'Hello World!'});
     return (
       <Image style={{flex:1,width: null,height: null,paddingTop:64,backgroundColor:'white'}}>
         <ScrollView
           automaticallyAdjustContentInsets={false}
           contentInset={{bottom:40}}
         >
-          <Text>222</Text>
+          <Text>abc</Text>
+          <Text onPress={goToPageDetail}>go detail!</Text>
         </ScrollView>
       </Image>
     );

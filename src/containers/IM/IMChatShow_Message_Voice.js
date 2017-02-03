@@ -9,7 +9,7 @@ import {
     TouchableOpacity,
     TouchableNativeFeedback
 } from 'react-native';
-import IMCharShowBg from './IMCharShowBg'
+//import IMCharShowBg from './IMCharShowBg'
 
 
 import Const from '../../utils/const'
@@ -144,11 +144,14 @@ export default class IMChatShow_Message_Text extends Component {
             ,data.isMe&&{paddingLeft:8,paddingRight:14,justifyContent:'flex-end'}]}
                   ref={component => this._root = component}
             >
+                {/*
                 <IMCharShowBg
                     width = {bgWidth}
                     height = {bgHeight}
                     isMe = {data.isMe}
                 />
+                */}
+
                 {data.isMe ? timeText : voiceIcon}
                 {data.isMe ? voiceIcon : timeText}
             </View>

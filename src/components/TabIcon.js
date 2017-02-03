@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { StyleSheet, Navigator,Text,View,Image} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { APP_STYLES } from '../utils/AppStyles';
 
 export default class TabIcon extends Component {
 
@@ -15,10 +16,10 @@ export default class TabIcon extends Component {
         <Icon
           name={this.props.selected ? this.props.selectedTabIcon : this.props.tabIcon }
           size={22}
-          color={ this.props.selected ? '#FFFFFF':'#0040ff'}
+          color={ this.props.selected ? APP_STYLES.primaryColor :'grey'}
           style={{width:22,height:22,alignSelf:'center',fontWeight:'300',}}
         />
-        <Text style={{color:this.props.selected ? '#FFFFFF':'#0040ff'}}>{ this.props.title }</Text>
+        <Text style={{color:this.props.selected ? APP_STYLES.primaryColor :'grey',fontSize:12}}>{ this.props.title }</Text>
       </View>
     );
   }

@@ -1,13 +1,10 @@
 import merge from 'lodash/merge';
 
 const initialState = {
-  users: {},
-  categories:{},
-  companies: {},
-  services:{},
-  appointments:{},
-  employees:{},
-  timings:{}
+  sessions: {},
+  contacts:{},
+  liverooms: {},
+  services:{}
 };
 
 export default function entities(state = initialState, action) {
