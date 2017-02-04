@@ -21,14 +21,14 @@ export const scenes = Actions.create(
                tabBarSelectedItemStyle={{backgroundColor:APP_STYLES.primaryBackgroundColor,height:50}}
                navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
         >
-          <Scene key="main"  title="聊天"
+          <Scene key="main" title="消息"
                   icon={TabIcon}
-                  selectedTabIcon="ios-home"
-                  tabIcon="ios-home-outline"
+                  selectedTabIcon="ios-chatbubbles"
+                  tabIcon="ios-chatbubbles-outline"
                   navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                   titleStyle={{ color:'white' }}
           >
-            <Scene key="messages" component={Messages} initial={true} icon={TabIcon}
+            <Scene key="messages" component={Messages} initial={true} icon={TabIcon}  title="大象"
                    selectedTabIcon="ios-chatbubbles" tabIcon="ios-chatbubbles-outline"
                    navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                    titleStyle={{ color:'white' }}
