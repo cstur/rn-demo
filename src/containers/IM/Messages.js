@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import isEmpty from 'lodash/isEmpty';
 
-import { fetchSessions } from '../../actions/message/sessions';
-import SessionList from './SessionList';
+import { fetchMessages } from '../../actions/messages';
+import MessageList from '../../components/MessageList';
 import IMRoom from './IMRoom';
 
 class Messages extends Component {
@@ -16,42 +16,32 @@ class Messages extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchSessions());
+    this.props.dispatch(fetchMessages());
   }
 
-  loadSession(session) {
-    Actions.sessionEntity({
-      title:session.name,
-      itemID:session.id
-    });
+  onMessageSelect(messsage) {
+    Actions.messageItem({messsage: messsage});
   }
 
   render() {
-    console.log('render categories');
-    const { sessions,sessionsReducer } = this.props;
-
+    const { messages } = this.props;
     return (
-      <View style={{flex:1,width: null,height: null,paddingBottom:50}}>
-        <IMRoom />
-        {/*
-          <SessionList
-            categories={sessions}
-            loadCategory={this.loadSession}
-            sessionsReducer={sessionsReducer}
+      <ScrollView style={{ flex:1,backgroundColor:'white' }} contentContainerStyle={{paddingTop: 64}} contentInset={{ bottom:50 }} >
+        <View>
+          <MessageList
+            messages={messages}
+            onMessageSelect={this.onMessageSelect}
           />
-          */}
-
-      </View>
-
+        </View>
+      </ScrollView>
     );
   }
 }
 
 function mapStateToProps(state) {
-  const { entities,sessionsReducer } = state;
+  const { entities } = state;
   return {
-    sessionsReducer,
-    sessions:entities.sessions && entities.sessions
+    messages : entities.messages
   }
 }
 

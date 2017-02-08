@@ -1,10 +1,9 @@
 import merge from 'lodash/merge';
 
 const initialState = {
-  sessions: {},
+  messages: [],
   contacts:{},
-  liverooms: {},
-  services:{}
+  liverooms: {}
 };
 
 export default function entities(state = initialState, action) {

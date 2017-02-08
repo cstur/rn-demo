@@ -5,9 +5,14 @@ import { Scene, Reducer, Router, Switch, TabBar, Modal, Schema, Actions } from '
 import { APP_STYLES } from './utils/AppStyles';
 import Messages from './containers/IM/Messages';
 import Session from './containers/IM/SessionItem';
+import IMRoom from './containers/IM/IMRoom';
 import Contacts from './containers/contacts/ContactList';
 import ContactDetail from './containers/contacts/ContactDetail';
 import LiveRoom from './containers/liveroom/RoomList';
+import Me from './containers/me/Me';
+import MeA from './containers/me/MeA';
+import MeB from './containers/me/MeB';
+import MeC from './containers/me/MeC';
 import TabIcon from './components/TabIcon';
 import NavigationDrawer from './components/NavigationDrawer';
 
@@ -27,13 +32,14 @@ export const scenes = Actions.create(
                   tabIcon="ios-chatbubbles-outline"
                   navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                   titleStyle={{ color:'white' }}
+                  leftButtonIconStyle = {{ tintColor:'white'}}
           >
             <Scene key="messages" component={Messages} initial={true} icon={TabIcon}  title="大象"
                    selectedTabIcon="ios-chatbubbles" tabIcon="ios-chatbubbles-outline"
                    navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                    titleStyle={{ color:'white' }}
             />
-            <Scene key="sessionEntity" component={Session} />
+            <Scene key="messageItem" component={IMRoom} hideTabBar={true} />
           </Scene>
           <Scene key="contacts" icon={TabIcon}
                  selectedTabIcon="ios-contacts" tabIcon="ios-contacts-outline"
@@ -48,6 +54,21 @@ export const scenes = Actions.create(
                  navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                  titleStyle={{ color:'white' }}
           />
+          <Scene key="mes" icon={TabIcon} title="我的"
+                 selectedTabIcon="ios-cog" tabIcon="ios-cog-outline"
+                 navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
+                 titleStyle={{ color:'white' }}
+                 leftButtonIconStyle = {{ tintColor:'white'}}
+          >
+            <Scene key="me" component={Me} initial={true} icon={TabIcon}  title="大象"
+                   selectedTabIcon="ios-cog" tabIcon="ios-cog-outline"
+                   navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
+                   titleStyle={{ color:'white' }}
+            />
+            <Scene key="meA" component={MeA} hideTabBar={true} />
+            <Scene key="meB" component={MeB} hideTabBar={true} />
+            <Scene key="meC" component={MeC} hideTabBar={true} />
+          </Scene>
         </Scene>
       </Scene>
     </Scene>
