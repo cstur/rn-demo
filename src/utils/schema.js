@@ -1,34 +1,8 @@
-// import { normalize, Schema, arrayOf,valuesOf,unionOf } from 'normalizr';
-//
-// const messagesSchema = new Schema('messages');
-//
-// messagesSchema.define({
-//   sessions: arrayOf(companySchema)
-// });
-//
-// companySchema.define({
-//   favorites:arrayOf(userSchema),
-//   services:arrayOf(serviceSchema),
-//   employees:arrayOf(employeeSchema)
-// });
-//
-// appointmentSchema.define({
-//   user:userSchema,
-//   company:companySchema,
-//   employee:employeeSchema,
-//   timing:timingSchema,
-//   service:serviceSchema
-// });
-//
-// userSchema.define({
-//   favorites:arrayOf(companySchema)
-// });
-//
-// serviceSchema.define({
-//   companies:arrayOf(companySchema)
-// });
-//
-// export const Schemas = {
-//   CATEGORY:categorySchema,
-//   CATEGORY_ARRAY:arrayOf(categorySchema),
-// };
+import { normalize, schema } from 'normalizr';
+
+const message = new schema.Entity('messages');
+
+export const Schemas = {
+  MESSAGESCHEMA:message,
+  MESSAGE_ARRAY:[message]
+};

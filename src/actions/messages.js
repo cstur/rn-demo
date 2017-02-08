@@ -1,6 +1,6 @@
 import {API_ROOT} from './../constants/config';
-//import { Schemas } from './../utils/schema';
-//import { normalize } from 'normalizr';
+import { Schemas } from './../utils/schema';
+import { normalize } from 'normalizr';
 import isEmpty from 'lodash/isEmpty';
 
 import {
@@ -16,10 +16,10 @@ function messagesRequest() {
 }
 
 function messagesSuccess(payload) {
-  //const normalized = normalize(payload.data,Schemas.TIMING_ARRAY);
+  const normalized = normalize(payload,Schemas.MESSAGE_ARRAY);
   return {
     type: MESSAGES_SUCCESS,
-    entities:{messages:payload}
+    entities:normalized.entities
   }
 }
 
