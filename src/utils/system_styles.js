@@ -25,6 +25,17 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:'white'
     },
+    containerNav: {
+        flex: 1,
+        backgroundColor:'white',
+        paddingTop:64
+    },
+    containerNavTab: {
+        flex: 1,
+        backgroundColor:'white',
+        paddingTop:64,
+        paddingBottom:50
+    }
 });
 
 

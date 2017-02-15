@@ -13,7 +13,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "736h",
-      "filename" : "Default-Landscape-736h@3x.png",
+      "filename" : "splashscreenlandscape.png",
       "minimum-system-version" : "8.0",
       "orientation" : "landscape",
       "scale" : "3x"
@@ -22,8 +22,25 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "667h",
-      "filename" : "Default-667h@2x.png",
+      "filename" : "splashscreen4.7hd.png",
       "minimum-system-version" : "8.0",
+      "orientation" : "portrait",
+      "scale" : "2x"
+    },
+    {
+      "orientation" : "portrait",
+      "idiom" : "iphone",
+      "filename" : "splashscreen4.7hd-2.png",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
+      "scale" : "2x"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
+      "subtype" : "retina4",
+      "filename" : "splashscreen4.7hd-1.png",
+      "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
     }

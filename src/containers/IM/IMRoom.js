@@ -459,10 +459,8 @@ export default class copy extends Component {
     }
 
     _menuBarItemClick = (item)=>{
-
-
         this.setState({
-            showMenuBar:false,
+            showMenuBar:true,
         })
     }
 
@@ -682,8 +680,7 @@ export default class copy extends Component {
         )
 
         return (
-            <View style={System_styles.styles.container}>
-                {this._renderNavBar()}
+            <View style={System_styles.styles.containerNav}>
                 {this._renderListView()}
                 <IMInput
                     ref={(intput) => this.intput = intput}

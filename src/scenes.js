@@ -35,7 +35,6 @@ export const scenes = Actions.create(
                   leftButtonIconStyle = {{ tintColor:'white'}}
           >
             <Scene key="messages" component={Messages} initial={true} icon={TabIcon}  title="大象"
-                   selectedTabIcon="ios-chatbubbles" tabIcon="ios-chatbubbles-outline"
                    navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                    titleStyle={{ color:'white' }}
             />
@@ -44,24 +43,23 @@ export const scenes = Actions.create(
           <Scene key="contacts" icon={TabIcon}
                  selectedTabIcon="ios-contacts" tabIcon="ios-contacts-outline"
                  navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
-                 titleStyle={{ color:'white' }} title="通讯录"
+                 titleStyle={{ color:'white' }} title="联系人"
           >
-            <Scene key="contactList" component={Contacts}  initial={true} />
+            <Scene key="contactList" component={Contacts}  initial={true}  title="大象"/>
             <Scene key="contactDetail" component={ContactDetail} title="PageTwo" />
           </Scene>
           <Scene key="liveroom" component={LiveRoom} icon={TabIcon} title="直播室"
-                 selectedTabIcon="ios-camera" tabIcon="ios-camera-outline"
+                 selectedTabIcon="ios-desktop" tabIcon="ios-desktop-outline"
                  navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                  titleStyle={{ color:'white' }}
           />
           <Scene key="mes" icon={TabIcon} title="我的"
-                 selectedTabIcon="ios-cog" tabIcon="ios-cog-outline"
+                 selectedTabIcon="ios-menu" tabIcon="ios-menu-outline"
                  navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                  titleStyle={{ color:'white' }}
                  leftButtonIconStyle = {{ tintColor:'white'}}
           >
-            <Scene key="me" component={Me} initial={true} icon={TabIcon}  title="大象"
-                   selectedTabIcon="ios-cog" tabIcon="ios-cog-outline"
+            <Scene key="me" component={Me} initial={true} icon={TabIcon}  title="我的"
                    navigationBarStyle={{ backgroundColor:APP_STYLES.primaryColor }}
                    titleStyle={{ color:'white' }}
             />

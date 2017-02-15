@@ -9,7 +9,8 @@ import {
     Animated,
     Image,
     PanResponder,
-    TouchableOpacity
+    TouchableOpacity,
+    StyleSheet
 } from 'react-native';
 
 import Const from '../../utils/const'
@@ -23,7 +24,7 @@ import IMFace from './IMFace'
 
 var i = 0
 
-export default class copy extends Component {
+export default class IMInput extends Component {
 
     static defaultProps = {
         recorderAction:(showActivity,cancel)=>{},
@@ -319,10 +320,8 @@ export default class copy extends Component {
 
     }
 
-
-
-
     _imAction = (event)=>{
+        console.log(event.nativeEvent.actionType);
         switch (event.nativeEvent.actionType){
             case 'del':{
                 this.setState({deleteBackward:false})
@@ -331,12 +330,10 @@ export default class copy extends Component {
                 this._send()
             }break;
         }
-
     }
 
     _renderInput = ()=>{
         const {showVoice,voicePressOn,deleteBackward,text} = this.state
-
 
         if(showVoice){
             return(
@@ -360,7 +357,7 @@ export default class copy extends Component {
                 <TextInput
                     ref={(textInput)=>{this.textInput = textInput}}
                     style={[{flex:1,padding:0},System_styles.getChanggui(17,Const.color_hei_84)]}
-                    multiline={true}
+                    multiline={false}
                     enablesReturnKeyAutomatically = {true}
                     returnKeyType='send'
                     onChangeText={(text) => this.setState({text:text})}
@@ -368,12 +365,10 @@ export default class copy extends Component {
                     blurOnSubmit = {false}
                     onContentSizeChange = {this._onContentSizeChange}
                     autoFocus = {this.keyboardAutoFoucs}
-
                     underlineColorAndroid = {'transparent'}
-                    //一下自定义属性 修改源码
                     forIM = {true}
                     deleteBackward= {deleteBackward}
-                    onSelectionChange = {this._imAction}
+                    onSubmitEditing={this._send}
                 />
             </Animated.View>
         )
@@ -405,25 +400,15 @@ export default class copy extends Component {
                />
             )
         }
-
-
-
     }
 
     render() {
         const {showVoice,showFace,subHeight,inputHeight} = this.state
 
         return (
-            <View
-                style={{borderTopColor:Const.color_hei_240,borderTopWidth:1,backgroundColor:'white',
-                width:Const.screen_width,borderBottomColor:Const.color_hei_240,borderBottomWidth:1}}
-            >
-                <View
-                    //main
-                   style={{paddingHorizontal:16,paddingVertical:8,flexDirection:'row'}}
-                >
+            <View style={styles.container}>
+                <View style={styles.subContainer}>
                     <View
-                        //voice
                         style={{width:30,justifyContent:'flex-end'}}
                     >
                         <TouchableOpacity
@@ -472,7 +457,7 @@ export default class copy extends Component {
                 </View>
                 <Animated.View
                     //subView
-                    style={{height:subHeight,flex:1,marginHorizontal:5}}
+                    style={{height:subHeight,flexGrow:1,marginHorizontal:5}}
                 >
                     {this._renderSub()}
                 </Animated.View>
@@ -480,3 +465,19 @@ export default class copy extends Component {
         );
     }
 }
+
+const styles=  StyleSheet.create({
+  container: {
+    borderTopColor:Const.color_hei_240,
+    borderTopWidth:1,
+    backgroundColor:'white',
+    width:Const.screen_width,
+    borderBottomColor:Const.color_hei_240,
+    borderBottomWidth:1
+  },
+  subContainer:{
+    paddingHorizontal:16,
+    paddingVertical:8,
+    flexDirection:'row'
+  },
+});

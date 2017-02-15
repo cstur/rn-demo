@@ -16,7 +16,7 @@ function messagesRequest() {
 }
 
 function messagesSuccess(payload) {
-  const normalized = normalize(payload,Schemas.MESSAGE_ARRAY);
+  const normalized = normalize(payload.roomlist,Schemas.MESSAGE_ARRAY);
   return {
     type: MESSAGES_SUCCESS,
     entities:normalized.entities
@@ -31,7 +31,7 @@ function messagesFailure(error) {
 }
 
 export function fetchMessages() {
-  var url = API_ROOT +'/messages';
+  var url = API_ROOT;
   return (dispatch,getState) => {
     // if(!isEmpty(getState().entities.timings)) {
     //   return;

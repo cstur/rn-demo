@@ -1,4 +1,4 @@
 <resources>
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
-    <string name="app_name">大象内部号</string>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">o1hgtclOEp6TXrrnF6pmCRpErfk-4kVfymAPG</string>
+    <string name="app_name">大象IM</string>
 </resources>
